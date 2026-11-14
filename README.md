@@ -40,6 +40,10 @@ Augmentasi yang dicoba:
 ![augmentasi_geser_dan_perbesar](hasil/augmentasi_geser_dan_perbesar.png)
 ![augmentasi_kecerahan_dan_kontras](hasil/augmentasi_kecerahan_dan_kontras.png)
 
+**Pertimbangan terhadap keterbatasan augmentasi**
+
+Pada augmentasi geser dan perbesar, perubahan posisi dan skala dapat menyebabkan sebagian area polip terpotong atau munculnya area kosong pada tepi citra. Oleh karena itu, hasil transformasi perlu diperiksa agar bentuk polip tetap masuk akal dan mask tetap sesuai dengan lokasi polip. Pada augmentasi kecerahan dan kontras, perubahan intensitas yang terlalu besar juga berpotensi mengurangi informasi visual yang diperlukan untuk mengenali batas polip.
+
 ## 4. Hasil
 
 | Skenario | Dice (rata-rata ± sb) | IoU (rata-rata ± sb) | Dice tiap ulangan |
