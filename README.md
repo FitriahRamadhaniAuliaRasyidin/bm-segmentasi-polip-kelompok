@@ -7,7 +7,7 @@
 |---|---|---|---|
 | Fitriah Ramadhani Aulia Rasyidin | 123430045 | FitriahRamahaniAuliaRasyidin | PJ teknis dan eksperimen U-Net |
 | Tasya Adinda Putri | 123430129 | TasyaAdindaPutri | Rancangan augmentasi dan analisis kesalahan |
-| Mailani Anatasya | 123430048 | ✍️ | Evaluasi, pembahasan, dan dokumentasi |
+| Mailani Anatasya | 123430048 | Mailani Anatasya | Evaluasi, pembahasan, dan dokumentasi |
 
 ## 1. Pertanyaan
 
@@ -40,11 +40,9 @@ Augmentasi yang dicoba:
 ![augmentasi_geser_dan_perbesar](hasil/augmentasi_geser_dan_perbesar.png)
 ![augmentasi_kecerahan_dan_kontras](hasil/augmentasi_kecerahan_dan_kontras.png)
 
-Penggunaan transformasi geometris seperti pergeseran dan perubahan skala juga telah dikaji dalam penelitian segmentasi polip (Sánchez-Peralta et al., 2020). Penggunaan variasi warna dan kontras untuk meningkatkan variasi citra pelatihan juga telah dikaji dalam penelitian segmentasi polip (Sánchez-Peralta et al., 2020; Cai et al., 2024)
-
 **Pertimbangan terhadap keterbatasan augmentasi**
 
-Pada augmentasi geser dan perbesar, perubahan posisi dan skala dapat menyebabkan sebagian area polip terpotong atau munculnya area kosong pada tepi citra. Oleh karena itu, hasil transformasi perlu diperiksa agar bentuk polip tetap masuk akal dan mask tetap sesuai dengan lokasi polip. Pada augmentasi kecerahan dan kontras, perubahan intensitas yang terlalu besar juga berpotensi mengurangi informasi visual yang diperlukan untuk mengenali batas polip
+Pada augmentasi geser dan perbesar, perubahan posisi dan skala dapat menyebabkan sebagian area polip terpotong atau munculnya area kosong pada tepi citra. Oleh karena itu, hasil transformasi perlu diperiksa agar bentuk polip tetap masuk akal dan mask tetap sesuai dengan lokasi polip. Pada augmentasi kecerahan dan kontras, perubahan intensitas yang terlalu besar juga berpotensi mengurangi informasi visual yang diperlukan untuk mengenali batas polip.
 
 ## 4. Hasil
 
@@ -100,13 +98,25 @@ Peta kesalahan dibuat menggunakan model dari pengulangan pertama untuk setiap sk
 <!-- Bandingkan hasil dengan hipotesis di Bagian 3. Hipotesis yang ternyata salah tetap bernilai,
      asalkan dijelaskan kenapa. Perbedaan kecil (lebih kecil dari simpangan baku) belum tentu berarti. -->
 
-✍️
+Hasil eksperimen sebagian mendukung hipotesis awal. Skenario geser dan perbesar menghasilkan rata-rata Dice tertinggi, yaitu 0,601 ± 0,017, dibandingkan baseline tanpa augmentasi sebesar 0,571 ± 0,012. Hasil ini menunjukkan bahwa variasi posisi dan skala dapat membantu model mengenali polip dalam kondisi tampilan yang berbeda.
+
+Temuan tersebut sejalan dengan penelitian pada segmentasi polip yang menggunakan transformasi geometris, seperti translasi dan perubahan skala, untuk menyimulasikan pergerakan kamera serta variasi sudut pandang selama kolonoskopi. Variasi skala dan posisi memang menjadi salah satu faktor yang perlu diperhatikan dalam pengembangan model segmentasi citra kolonoskopi.
+
+Sebaliknya, hipotesis bahwa augmentasi kecerahan dan kontras akan meningkatkan performa tidak didukung oleh hasil eksperimen. Skenario ini menghasilkan rata-rata Dice sebesar 0,534 ± 0,033, lebih rendah daripada baseline. Hal ini menunjukkan bahwa penambahan variasi kecerahan dan kontras dengan parameter yang digunakan belum memberikan manfaat pada konfigurasi eksperimen ini. Meskipun augmentasi fotometrik, seperti perubahan brightness dan contrast, umum digunakan dalam segmentasi polip, pengaruhnya dapat bergantung pada karakteristik dataset dan parameter augmentasi yang digunakan.
+
+Analisis peta kesalahan menunjukkan bahwa ketiga skenario masih mengalami kesulitan pada dua citra dengan polip yang memiliki kontras rendah atau karakteristik visual yang sulit dibedakan dari mukosa di sekitarnya. Pada kedua citra tersebut, nilai Dice berada pada rentang 0,00 sampai 0,04. Sebaliknya, pada citra dengan polip yang lebih jelas, ketiga skenario menghasilkan Dice yang tinggi, yaitu 0,86 sampai 0,96.
+
+Secara keseluruhan, geser dan perbesar menjadi skenario terbaik dalam eksperimen ini berdasarkan rata-rata Dice dan IoU. Namun, peningkatan Dice dibandingkan baseline relatif kecil. Dengan hanya tiga ulangan, hasil ini belum cukup untuk menyatakan bahwa perbedaan tersebut signifikan secara statistik. Eksperimen selanjutnya dapat menggunakan lebih banyak ulangan dan variasi parameter augmentasi untuk menguji konsistensi hasil.
 
 ## 7. Pembagian kerja
 
 <!-- Siapa mengerjakan apa. Penilaian proses kerja dilihat dari riwayat commit tiap anggota. -->
 
-✍️
+| Anggota | Kontribusi utama |
+|---|---|
+| Fitriah Ramadhani Aulia Rasyidin | PJ teknis dan eksperimen U-Net. Menyiapkan dan mengatur notebook, menjalankan eksperimen pada setiap skenario, serta menyimpan hasil eksperimen ke repository. |
+| Tasya Adinda Putri | Menyusun rancangan skenario augmentasi dan hipotesis, serta melakukan analisis peta kesalahan hasil segmentasi. |
+| Mailani Anatasya | Melakukan evaluasi hasil eksperimen, menyusun pembahasan dan kesimpulan, serta melengkapi dokumentasi dan README. |
 
 ## 8. Penggunaan AI
 
@@ -114,7 +124,7 @@ Peta kesalahan dibuat menggunakan model dari pengulangan pertama untuk setiap sk
      Contoh: "Claude Code (CLI) untuk menulis skenario augmentasi dan memperbaiki error di Bagian 4.
      Draf Bagian 6 ditulis sendiri, lalu dirapikan bahasanya dengan bantuan AI." -->
 
-✍️
+ChatGPT digunakan untuk membantu merapikan struktur bahasa dan menyusun pembahasan hasil eksperimen berdasarkan tabel metrik, grafik perbandingan, dan peta kesalahan yang dihasilkan notebook. Analisis angka, interpretasi hasil, dan isi akhir README ditinjau kembali oleh anggota kelompok dan disesuaikan dengan hasil eksperimen yang sebenarnya.
 
 ## Cara menjalankan ulang
 
@@ -127,8 +137,8 @@ Atau buka notebook di Google Colab (Runtime → Change runtime type → T4 GPU).
 
 ## Referensi
 
-- Jha, D., dkk. (2020). Kvasir-SEG: A Segmented Polyp Dataset. *MultiMedia Modeling (MMM 2020)*, 451–462.
-- Ronneberger, O., Fischer, P., & Brox, T. (2015). U-Net: Convolutional Networks for Biomedical Image Segmentation. *MICCAI*. arXiv:1505.04597.
-- Sánchez-Peralta, L. F., Picón, A., Sánchez-Margallo, F. M., & Pagador, J. B. (2020). Unravelling the effect of data augmentation transformations in polyp segmentation. International Journal of Computer Assisted Radiology and Surgery, 15, 1975–1988. https://doi.org/10.1007/s11548-020-02262-4
-- Cai, T., Yan, H., Ding, K., Zhang, Y., & Zhou, Y. (2024). WSPolyp-SAM: Weakly Supervised and Self-Guided Fine-Tuning of SAM for Colonoscopy Polyp Segmentation. Applied Sciences, 14(12), 5007. https://doi.org/10.3390/app14125007
-- Ouria, M., Asgharzadeh-Bonab, A., Kalbkhani, H., & Rezaei, V. (2026). SegFormer-based boundary-aware polyp segmentation with adaptive multi-branch fusion. Scientific Reports, 16, Article 20012. https://doi.org/10.1038/s41598-026-42381-7
+- Cai, T., Yan, H., Ding, K., Zhang, Y. and Zhou, Y. (2024) ‘WSPolyp-SAM: Weakly supervised and self-guided fine-tuning of SAM for colonoscopy polyp segmentation’, Applied Sciences, 14(12), p. 5007. Available at: https://doi.org/10.3390/app14125007.
+- Jha, D., Smedsrud, P.H., Riegler, M.A., Halvorsen, P., de Lange, T., Johansen, D. and Johansen, H.D. (2020) ‘Kvasir-SEG: A segmented polyp dataset’, in MultiMedia Modeling. Cham: Springer, pp. 451–462.
+- Ouria, M., Asgharzadeh-Bonab, A., Kalbkhani, H. and Rezaei, V. (2026) ‘SegFormer-based boundary-aware polyp segmentation with adaptive multi-branch fusion’, Scientific Reports, 16, Article 20012. Available at: https://doi.org/10.1038/s41598-026-42381-7.
+- Ronneberger, O., Fischer, P. and Brox, T. (2015) ‘U-Net: Convolutional networks for biomedical image segmentation’, in Medical Image Computing and Computer-Assisted Intervention (MICCAI). Available at: https://arxiv.org/abs/1505.04597.
+- Sánchez-Peralta, L.F., Picón, A., Sánchez-Margallo, F.M. and Pagador, J.B. (2020) ‘Unravelling the effect of data augmentation transformations in polyp segmentation’, International Journal of Computer Assisted Radiology and Surgery, 15, pp. 1975–1988. Available at: https://doi.org/10.1007/s11548-020-02262-4.
