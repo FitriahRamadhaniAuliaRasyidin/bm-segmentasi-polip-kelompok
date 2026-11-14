@@ -54,9 +54,7 @@ Contoh augmentasi yang dicoba:
 
 ## 4. Hasil
 
-<!-- Tempel isi hasil/ringkasan.md di sini. -->
-
-✍️ tempel tabel dari `hasil/ringkasan.md`
+[TEMPEL TABEL DICE DAN IoU DARI ringkasan.md DI SINI]
 
 ![Perbandingan Dice](hasil/perbandingan.png)
 
