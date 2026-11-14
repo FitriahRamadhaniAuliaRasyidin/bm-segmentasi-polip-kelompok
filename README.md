@@ -83,6 +83,16 @@ Empat citra uji dipilih berdasarkan hasil model tanpa augmentasi: dua citra ters
 
 **Apakah augmentasi memperbaiki kasus sulit?** Tidak. Pada kedua citra sulit, ketiga skenario tetap gagal (Dice 0,00 sampai 0,04). Skenario geser dan perbesar hanya menangkap sebagian kecil ujung polip pada baris 1 (Dice 0,04), yang belum dapat dianggap perbaikan berarti. Perlu dicatat bahwa kedua citra sulit dipilih berdasarkan hasil model tanpa augmentasi, sehingga perbandingannya tidak sepenuhnya setara dan hanya bersifat ilustratif
 
+**5.4 Cara Pemilihan Citra dan Keterbatasan Analisis**
+
+Peta kesalahan menampilkan empat citra uji yang terdiri dari dua citra dengan hasil segmentasi paling sulit dan dua citra dengan hasil segmentasi paling mudah berdasarkan nilai Dice pada skenario tanpa augmentasi. Keempat citra tersebut digunakan untuk membandingkan hasil prediksi dari seluruh skenario augmentasi pada gambar yang sama
+
+Visualisasi menggunakan warna hijau untuk *true positive*, merah untuk *false positive*, biru untuk *false negative*, dan hitam untuk *true negative*. Dengan demikian, perbandingan warna dapat membantu mengidentifikasi bagian polip yang berhasil dikenali, bagian yang terlewat, serta area bukan polip yang salah diprediksi
+
+**Keterbatasan analisis:**
+
+Peta kesalahan dibuat menggunakan model dari pengulangan pertama untuk setiap skenario, bukan gabungan hasil dari seluruh pengulangan. Oleh karena itu, peta kesalahan digunakan sebagai contoh analisis visual secara kualitatif dan tidak sepenuhnya mewakili performa rata-rata ketiga pengulangan. Untuk menilai performa keseluruhan, hasil peta kesalahan perlu dibaca bersama nilai rata-rata dan simpangan baku Dice Score serta IoU dari tiga pengulangan
+
 ## 6. Pembahasan & kesimpulan
 
 <!-- Bandingkan hasil dengan hipotesis di Bagian 3. Hipotesis yang ternyata salah tetap bernilai,
