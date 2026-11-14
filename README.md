@@ -17,9 +17,9 @@
 
 | Nama | NIM | Username GitHub | Kontribusi utama |
 |---|---|---|---|
-| ✍️ | ✍️ | ✍️ | ✍️ misal: menjalankan eksperimen, menulis Bagian 3 |
-| ✍️ | ✍️ | ✍️ | ✍️ |
-| ✍️ | ✍️ | ✍️ | ✍️ |
+| Fitriah Ramadhani Aulia Rasyidin | 123430045 | FitriahRamahaniAuliaRasyidin | PJ teknis dan eksperimen U-Net |
+| Tasya Adinda Putri | 123430129 | ✍️ | Rancangan augmentasi dan analisis kesalahan |
+| Mailani Anatasya | 123430048 | ✍️ | Evaluasi, pembahasan, dan dokumentasi |
 
 ## 1. Pertanyaan
 
@@ -29,12 +29,12 @@ Augmentasi apa yang membantu U-Net menemukan polip pada citra kolonoskopi, dan a
 
 <!-- Isi dari Bagian 2 notebook. Pastikan CEPAT = False untuk hasil akhir. -->
 
-- Dataset: Kvasir-SEG (1000 citra kolonoskopi + mask polip), diperkecil ke 128 × 128 piksel.
-- Data uji: 200 citra (tetap). Data latih: ✍️ citra per ulangan.
-- Model: U-Net mini (±0,5 juta parameter), ✍️ epoch, ✍️ ulangan per skenario.
-- Dijalankan di: ✍️ (misal: Google Colab T4 / laptop CPU / Mac M1).
-
-![Contoh data](hasil/contoh_data.png)
+- Dataset: Kvasir-SEG (1000 citra kolonoskopi + mask polip),
+  diperkecil ke 128 × 128 piksel.
+- Data uji: 200 citra. Data latih: 200 citra per ulangan.
+- Model: U-Net mini (±0,5 juta parameter),
+  40 epoch, 3 ulangan per skenario.
+- Dijalankan di: Google Colab T4.
 
 ## 3. Skenario augmentasi & hipotesis
 
