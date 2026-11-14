@@ -40,9 +40,11 @@ Augmentasi yang dicoba:
 ![augmentasi_geser_dan_perbesar](hasil/augmentasi_geser_dan_perbesar.png)
 ![augmentasi_kecerahan_dan_kontras](hasil/augmentasi_kecerahan_dan_kontras.png)
 
+Penggunaan transformasi geometris seperti pergeseran dan perubahan skala juga telah dikaji dalam penelitian segmentasi polip (Sánchez-Peralta et al., 2020). Penggunaan variasi warna dan kontras untuk meningkatkan variasi citra pelatihan juga telah dikaji dalam penelitian segmentasi polip (Sánchez-Peralta et al., 2020; Cai et al., 2024)
+
 **Pertimbangan terhadap keterbatasan augmentasi**
 
-Pada augmentasi geser dan perbesar, perubahan posisi dan skala dapat menyebabkan sebagian area polip terpotong atau munculnya area kosong pada tepi citra. Oleh karena itu, hasil transformasi perlu diperiksa agar bentuk polip tetap masuk akal dan mask tetap sesuai dengan lokasi polip. Pada augmentasi kecerahan dan kontras, perubahan intensitas yang terlalu besar juga berpotensi mengurangi informasi visual yang diperlukan untuk mengenali batas polip.
+Pada augmentasi geser dan perbesar, perubahan posisi dan skala dapat menyebabkan sebagian area polip terpotong atau munculnya area kosong pada tepi citra. Oleh karena itu, hasil transformasi perlu diperiksa agar bentuk polip tetap masuk akal dan mask tetap sesuai dengan lokasi polip. Pada augmentasi kecerahan dan kontras, perubahan intensitas yang terlalu besar juga berpotensi mengurangi informasi visual yang diperlukan untuk mengenali batas polip
 
 ## 4. Hasil
 
